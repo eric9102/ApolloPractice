@@ -1,0 +1,6 @@
+framework module Pods_ApolloPractice {
+  umbrella header "Pods-ApolloPractice-umbrella.h"
+
+  export *
+  module * { export * }
+}
