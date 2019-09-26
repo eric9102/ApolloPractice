@@ -13,6 +13,7 @@
 		6A24CBFE233AF5D80095B0AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A24CBFC233AF5D80095B0AA /* Main.storyboard */; };
 		6A24CC00233AF5D90095B0AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A24CBFF233AF5D90095B0AA /* Assets.xcassets */; };
 		6A24CC03233AF5D90095B0AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A24CC01233AF5D90095B0AA /* LaunchScreen.storyboard */; };
+		6A2D8589233C64A9007D2050 /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8588233C64A9007D2050 /* Apollo.swift */; };
 		6A72F040233B1A880032A10C /* User.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6A72F03F233B1A880032A10C /* User.graphql */; };
 		6A72F042233B3F8F0032A10C /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A72F041233B3F8F0032A10C /* schema.json */; };
 		6A8E1E50233B4BB100F39F5C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8E1E4F233B4BB100F39F5C /* API.swift */; };
@@ -28,6 +29,7 @@
 		6A24CBFF233AF5D90095B0AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A24CC02233AF5D90095B0AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A24CC04233AF5D90095B0AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A2D8588233C64A9007D2050 /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
 		6A71BF6C233B0D67006A3A88 /* Apollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Apollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A72F03F233B1A880032A10C /* User.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = User.graphql; sourceTree = "<group>"; };
 		6A72F041233B3F8F0032A10C /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				6A24CBFF233AF5D90095B0AA /* Assets.xcassets */,
 				6A24CC01233AF5D90095B0AA /* LaunchScreen.storyboard */,
 				6A24CC04233AF5D90095B0AA /* Info.plist */,
+				6A2D8588233C64A9007D2050 /* Apollo.swift */,
 			);
 			path = ApolloPractice;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			files = (
 				6A24CBFB233AF5D80095B0AA /* ViewController.swift in Sources */,
 				6A8E1E50233B4BB100F39F5C /* API.swift in Sources */,
+				6A2D8589233C64A9007D2050 /* Apollo.swift in Sources */,
 				6A24CBF9233AF5D80095B0AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

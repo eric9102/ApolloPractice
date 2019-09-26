@@ -15,19 +15,28 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        loadData()
+        loadMeData()
     }
 
 
     func loadData() {
  
-        let apollo = ApolloClient(url: URL(string: "https://wechattest.yunpub.cn/api/graphql")!)
+        let apollo = Apollo.shared.client
         
         apollo.fetch(query: HomeBannerQuery()) { result in
             guard let data = try? result.get().data else { return }
             print(data.homeBanner!)
         }
         
+    }
+    
+    func loadMeData() {
+        let apollo = Apollo.shared.client
+        
+        apollo.fetch(query: MeQuery()) { result in
+            guard let data = try? result.get().data else { return }
+            print(data.me!)
+        }
     }
     
 }
