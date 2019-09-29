@@ -57,21 +57,21 @@ extension YYApollo: HTTPNetworkTransportPreflightDelegate {
         variables.updateValue("3.2.0", forKey: "ver")
         bodyDict?.updateValue(variables, forKey: "variables")
         
-        var pageInfo: [String: Any] = [:]
-        pageInfo.updateValue("pages/bookHomepage", forKey: "route")
-        pageInfo.updateValue(["id":"4596"], forKey: "options")
-        bodyDict?.updateValue(pageInfo, forKey: "pageInfo")
-        
-        var launchOpts: [String: Any] = [:]
-        launchOpts.updateValue("pages/index", forKey: "path")
-        launchOpts.updateValue([:], forKey: "query")
-        launchOpts.updateValue(1089, forKey: "scene")
-        launchOpts.updateValue([:], forKey: "referrerInfo")
-        launchOpts.updateValue(false, forKey: "prerender")
-        launchOpts.updateValue(0, forKey: "landing")
-        bodyDict?.updateValue(launchOpts, forKey: "launchOpts")
-        
-        bodyDict?.removeValue(forKey: "operationName")
+//        var pageInfo: [String: Any] = [:]
+//        pageInfo.updateValue("pages/bookHomepage", forKey: "route")
+//        pageInfo.updateValue(["id":"4596"], forKey: "options")
+//        bodyDict?.updateValue(pageInfo, forKey: "pageInfo")
+//        
+//        var launchOpts: [String: Any] = [:]
+//        launchOpts.updateValue("pages/index", forKey: "path")
+//        launchOpts.updateValue([:], forKey: "query")
+//        launchOpts.updateValue(1089, forKey: "scene")
+//        launchOpts.updateValue([:], forKey: "referrerInfo")
+//        launchOpts.updateValue(false, forKey: "prerender")
+//        launchOpts.updateValue(0, forKey: "landing")
+//        bodyDict?.updateValue(launchOpts, forKey: "launchOpts")
+//        
+//        bodyDict?.removeValue(forKey: "operationName")
         
         request.httpBody = jsonToData(jsonDic: bodyDict!)
         
