@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         
         let apollo = YYApollo.shared.client
         
-        apollo.fetch(query: ItemQuery(id: 4596, isbn: "1089")) { result in
+        apollo.fetch(query: ItemQuery(id: 4569, isbn: "1089")) { result in
             
             guard let data = try? result.get().data else { return }
             print(data.userGood!)

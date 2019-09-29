@@ -50,10 +50,21 @@ extension YYApollo: HTTPNetworkTransportPreflightDelegate {
         
         
         var bodyDict = dataToDictionary(data: request.httpBody!)
-        var variables: [String: String] = [:]
+        var variables: [String: Any] = [:]
+        
+        if let originVariables = bodyDict?["variables"] {
+
+            if originVariables is NSNull {
+                
+            }else{
+                
+                variables = originVariables as! [String: Any]
+                
+            }
+
+        }
         
         variables.updateValue("a756616399d8958cbc47010fb6b062fdfdb6c303c637bfa0f00cd9b6939767f6", forKey: "token")
-        variables.updateValue("4569", forKey: "id")
         variables.updateValue("3.2.0", forKey: "ver")
         bodyDict?.updateValue(variables, forKey: "variables")
         
