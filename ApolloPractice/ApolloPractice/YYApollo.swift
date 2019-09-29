@@ -53,7 +53,7 @@ extension YYApollo: HTTPNetworkTransportPreflightDelegate {
         var variables: [String: String] = [:]
         
         variables.updateValue("a756616399d8958cbc47010fb6b062fdfdb6c303c637bfa0f00cd9b6939767f6", forKey: "token")
-        variables.updateValue("4596", forKey: "id")
+        variables.updateValue("4569", forKey: "id")
         variables.updateValue("3.2.0", forKey: "ver")
         bodyDict?.updateValue(variables, forKey: "variables")
         
