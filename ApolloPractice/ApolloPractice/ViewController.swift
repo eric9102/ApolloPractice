@@ -21,7 +21,7 @@ class ViewController: UIViewController {
 
     func loadData() {
  
-        let apollo = Apollo.shared.client
+        let apollo = YYApollo.shared.client
         
         apollo.fetch(query: HomeBannerQuery()) { result in
             guard let data = try? result.get().data else { return }
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }
     
     func loadMeData() {
-        let apollo = Apollo.shared.client
+        let apollo = YYApollo.shared.client
         
         apollo.fetch(query: MeQuery()) { result in
             guard let data = try? result.get().data else { return }

@@ -11,8 +11,8 @@ import Apollo
 
 // MARK: - Singleton Wrapper
 
-class Apollo {
-    static let shared = Apollo()
+class YYApollo {
+    static let shared = YYApollo()
     
     // Configure the network transport to use the singleton as the delegate.
     private lazy var networkTransport = HTTPNetworkTransport(
@@ -26,7 +26,7 @@ class Apollo {
 
 // MARK: - Pre-flight delegate
 
-extension Apollo: HTTPNetworkTransportPreflightDelegate {
+extension YYApollo: HTTPNetworkTransportPreflightDelegate {
     
     func networkTransport(_ networkTransport: HTTPNetworkTransport,
                           shouldSend request: URLRequest) -> Bool {
@@ -49,7 +49,7 @@ extension Apollo: HTTPNetworkTransportPreflightDelegate {
         
         var bodyDict = dataToDictionary(data: request.httpBody!)
         var variables: [String: String] = [:]
-        variables.updateValue("e3467cfb702d5a3aac5a82f5a5ad7b3565bb9958d5bb20204dcb5e7a50b4d8fc", forKey: "token")
+        variables.updateValue("a756616399d8958cbc47010fb6b062fdfdb6c303c637bfa0f00cd9b6939767f6", forKey: "token")
         bodyDict?.updateValue(variables, forKey: "variables")
         request.httpBody = jsonToData(jsonDic: bodyDict!)
         
