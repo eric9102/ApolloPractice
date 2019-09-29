@@ -16,7 +16,7 @@ class YYApollo {
     
     // Configure the network transport to use the singleton as the delegate.
     private lazy var networkTransport = HTTPNetworkTransport(
-        url: URL(string: "https://wechattest.yunpub.cn/api/graphql?")!,
+        url: URL(string: "https://wechattest.yunpub.cn/api/graphql")!,
         delegate: self
     )
     

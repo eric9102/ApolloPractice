@@ -16,11 +16,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
 //        loadMeData()
-        loadEditorRecommend()
+//        loadEditorRecommend()
         
     }
+    
 
-
+    @IBAction func buttonAction(_ sender: Any) {
+        
+        self .loadEditorRecommend()
+        
+    }
+    
     func loadData() {
  
         let apollo = YYApollo.shared.client
@@ -45,7 +51,7 @@ class ViewController: UIViewController {
         
         let apollo = YYApollo.shared.client
         
-        apollo.fetch(query: ItemQuery(id: 4596, isbn: "111")) { result in
+        apollo.fetch(query: ItemQuery(id: 4596, isbn: "4596")) { result in
             
             guard let data = try? result.get().data else { return }
             print(data.userGood!)
