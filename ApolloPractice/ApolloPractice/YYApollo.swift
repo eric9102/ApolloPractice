@@ -43,6 +43,7 @@ extension YYApollo: HTTPNetworkTransportPreflightDelegate {
         // Add any new headers you need
         headers["authority"] = "wechattest.yunpub.cn"
         headers["user-agent"] = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.5(0x17000523) NetType/WIFI Language/zh_CN"
+        headers["referer"] = "https://servicewechat.com/wxd6b9747407d6bec7/0/page-frame.html"
         
         // Re-assign the updated headers to the request.
         request.allHTTPHeaderFields = headers
@@ -54,8 +55,22 @@ extension YYApollo: HTTPNetworkTransportPreflightDelegate {
         variables.updateValue("a756616399d8958cbc47010fb6b062fdfdb6c303c637bfa0f00cd9b6939767f6", forKey: "token")
         variables.updateValue("4596", forKey: "id")
         variables.updateValue("3.2.0", forKey: "ver")
-        
         bodyDict?.updateValue(variables, forKey: "variables")
+        
+        var pageInfo: [String: Any] = [:]
+        pageInfo.updateValue("pages/bookHomepage", forKey: "route")
+        pageInfo.updateValue(["id":"4596"], forKey: "options")
+        bodyDict?.updateValue(pageInfo, forKey: "pageInfo")
+        
+        var launchOpts: [String: Any] = [:]
+        launchOpts.updateValue("pages/index", forKey: "path")
+        launchOpts.updateValue([:], forKey: "query")
+        launchOpts.updateValue(1089, forKey: "scene")
+        launchOpts.updateValue([:], forKey: "referrerInfo")
+        launchOpts.updateValue(false, forKey: "prerender")
+        launchOpts.updateValue(0, forKey: "landing")
+        bodyDict?.updateValue(launchOpts, forKey: "launchOpts")
+        
         request.httpBody = jsonToData(jsonDic: bodyDict!)
         
         
