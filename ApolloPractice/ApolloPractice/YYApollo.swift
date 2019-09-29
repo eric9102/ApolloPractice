@@ -71,6 +71,8 @@ extension YYApollo: HTTPNetworkTransportPreflightDelegate {
         launchOpts.updateValue(0, forKey: "landing")
         bodyDict?.updateValue(launchOpts, forKey: "launchOpts")
         
+        bodyDict?.removeValue(forKey: "operationName")
+        
         request.httpBody = jsonToData(jsonDic: bodyDict!)
         
         
