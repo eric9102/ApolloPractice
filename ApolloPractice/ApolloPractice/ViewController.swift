@@ -15,7 +15,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        loadMeData()
+//        loadMeData()
+        loadEditorRecommend()
+        
     }
 
 
@@ -37,6 +39,20 @@ class ViewController: UIViewController {
             guard let data = try? result.get().data else { return }
             print(data.me!)
         }
+    }
+    
+    func loadEditorRecommend() {
+        
+        let apollo = YYApollo.shared.client
+        
+        apollo.fetch(query: ItemQuery(id: 4596, isbn: "111")) { result in
+            
+            guard let data = try? result.get().data else { return }
+            print(data.userGood!)
+            
+        }
+        
+        
     }
     
 }

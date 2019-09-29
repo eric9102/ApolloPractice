@@ -16,7 +16,7 @@ class YYApollo {
     
     // Configure the network transport to use the singleton as the delegate.
     private lazy var networkTransport = HTTPNetworkTransport(
-        url: URL(string: "https://wechattest.yunpub.cn/api/graphql")!,
+        url: URL(string: "https://wechattest.yunpub.cn/api/graphql?")!,
         delegate: self
     )
     
@@ -41,7 +41,8 @@ extension YYApollo: HTTPNetworkTransportPreflightDelegate {
         var headers = request.allHTTPHeaderFields ?? [String: String]()
         
         // Add any new headers you need
-        headers["Authorization"] = "Bearer"
+        headers["authority"] = "wechattest.yunpub.cn"
+        headers["user-agent"] = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.5(0x17000523) NetType/WIFI Language/zh_CN"
         
         // Re-assign the updated headers to the request.
         request.allHTTPHeaderFields = headers
@@ -49,7 +50,11 @@ extension YYApollo: HTTPNetworkTransportPreflightDelegate {
         
         var bodyDict = dataToDictionary(data: request.httpBody!)
         var variables: [String: String] = [:]
+        
         variables.updateValue("a756616399d8958cbc47010fb6b062fdfdb6c303c637bfa0f00cd9b6939767f6", forKey: "token")
+        variables.updateValue("4596", forKey: "id")
+        variables.updateValue("3.2.0", forKey: "ver")
+        
         bodyDict?.updateValue(variables, forKey: "variables")
         request.httpBody = jsonToData(jsonDic: bodyDict!)
         
